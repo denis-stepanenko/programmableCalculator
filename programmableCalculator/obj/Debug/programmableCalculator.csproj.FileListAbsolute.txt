@@ -4,3 +4,10 @@ C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\bi
 C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.csprojResolveAssemblyReference.cache
 C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.exe
 C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.pdb
+C:\Users\151\Desktop\git\programmableCalculator\programmableCalculator\bin\Debug\programmableCalculator.exe.config
+C:\Users\151\Desktop\git\programmableCalculator\programmableCalculator\bin\Debug\programmableCalculator.exe
+C:\Users\151\Desktop\git\programmableCalculator\programmableCalculator\bin\Debug\programmableCalculator.pdb
+C:\Users\151\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.csprojAssemblyReference.cache
+C:\Users\151\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.csproj.CoreCompileInputs.cache
+C:\Users\151\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.exe
+C:\Users\151\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.pdb
