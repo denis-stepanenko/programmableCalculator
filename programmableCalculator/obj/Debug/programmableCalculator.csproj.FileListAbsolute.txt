@@ -1,1 +1,6 @@
 C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\bin\Debug\programmableCalculator.exe.config
+C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\bin\Debug\programmableCalculator.exe
+C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\bin\Debug\programmableCalculator.pdb
+C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.csprojResolveAssemblyReference.cache
+C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.exe
+C:\Users\userasup20\Desktop\git\programmableCalculator\programmableCalculator\obj\Debug\programmableCalculator.pdb
