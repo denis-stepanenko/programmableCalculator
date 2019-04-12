@@ -10,7 +10,7 @@ namespace programmableCalculator
             do
             {
                 Console.WriteLine(
-@"Доступны операции: *, /, +, - 
+@"Доступны операции: ^, *, /, +, - 
 Доступно использование скобок.
 Введите математическое выражение:");
                 string expression = Console.ReadLine();

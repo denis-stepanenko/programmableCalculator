@@ -8,6 +8,7 @@ namespace programmableCalculator
         // группы операций для соблюдения приоритета
         enum OperationsGroup
         {
+            Exponentiation,
             MultiplyAndDivide,
             PlusAndMinus
         }
@@ -22,7 +23,7 @@ namespace programmableCalculator
 
             while (expression.IsMatch(input))
             {
-                if (Regex.IsMatch(input, @"^[^*/+-]*$"))
+                if (!Regex.IsMatch(input, @"([*/+-]+)|(\^+)"))
                 {
                     break;
                 }
@@ -44,6 +45,7 @@ namespace programmableCalculator
         // вычисляет подвыражение
         static string CalculateSubExpression(string input)
         {
+            input = CalculateOperations(input, OperationsGroup.Exponentiation);
             input = CalculateOperations(input, OperationsGroup.MultiplyAndDivide);
             input = CalculateOperations(input, OperationsGroup.PlusAndMinus);
 
@@ -54,6 +56,12 @@ namespace programmableCalculator
         static string CalculateOperations(string input, OperationsGroup group)
         {
             string pattern = "";
+
+            if (group == OperationsGroup.Exponentiation)
+            {
+                pattern = @"((\d+\,\d+)|\d+)\s*\^\s*((\d+\,\d+)|\d+)";
+            }
+
             if (group == OperationsGroup.MultiplyAndDivide)
             {
                 pattern = @"((\d+\,\d+)|\d+)\s*[*/]\s*((\d+\,\d+)|\d+)";
@@ -82,6 +90,15 @@ namespace programmableCalculator
         {
             int separatorIndex;
             string result = "";
+
+            separatorIndex = input.IndexOf('^');
+
+            if (separatorIndex > -1)
+            {
+                double a = Convert.ToDouble(input.Substring(0, separatorIndex));
+                double b = Convert.ToDouble(input.Substring(separatorIndex + 1, input.Length - separatorIndex - 1));
+                result = Math.Pow(a, b).ToString();
+            }
 
             separatorIndex = input.IndexOf('*');
 
