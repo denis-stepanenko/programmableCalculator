@@ -15,7 +15,7 @@ namespace programmableCalculator
 Введите математическое выражение:");
                 string expression = Console.ReadLine();
 
-                double result = Calculator.Calculate(expression);
+                string result = Calculator.Calculate(expression);
                 Console.WriteLine($"Result = {result}");
 
                 Console.Write("Хотите продолжить? (y/n): ");

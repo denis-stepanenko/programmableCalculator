@@ -5,14 +5,19 @@ namespace programmableCalculator
 {
     static class Calculator
     {
+        // группы операций для соблюдения приоритета
         enum OperationsGroup
         {
             MultiplyAndDivide,
             PlusAndMinus
         }
 
-        public static double Calculate(string input)
+        // разбивает выражение на подвыражения 
+        // и вычиляет подвыражения
+        public static string Calculate(string input)
         {
+            input = input.Replace('.', ',');
+
             var expression = new Regex(@"(\(|^)[^()]*(\)|$)");
 
             while (expression.IsMatch(input))
@@ -33,9 +38,10 @@ namespace programmableCalculator
                 input = expression.Replace(input, CalculateSubExpression(subExpression));
             }
 
-            return Convert.ToDouble(input);
+            return input;
         }
 
+        // вычисляет подвыражение
         static string CalculateSubExpression(string input)
         {
             input = CalculateOperations(input, OperationsGroup.MultiplyAndDivide);
@@ -44,17 +50,18 @@ namespace programmableCalculator
             return input;
         }
 
+        // вычисляет группу операций в подвыражении
         static string CalculateOperations(string input, OperationsGroup group)
         {
             string pattern = "";
             if (group == OperationsGroup.MultiplyAndDivide)
             {
-                pattern = @"((\d+[.,]\d+)|\d+)[*/]((\d+[.,]\d+)|\d+)";
+                pattern = @"((\d+\,\d+)|\d+)\s*[*/]\s*((\d+\,\d+)|\d+)";
             }
 
             if (group == OperationsGroup.PlusAndMinus)
             {
-                pattern = @"((\d+[.,]\d+)|\d+)[+-]((\d+[.,]\d+)|\d+)";
+                pattern = @"((\d+\,\d+)|\d+)\s*[+-]\s*((\d+\,\d+)|\d+)";
             }
 
             var expression = new Regex(pattern);
@@ -70,6 +77,7 @@ namespace programmableCalculator
             return input;
         }
 
+        // возвращает результат вычисления триплета [число] [операция] [число]
         static string CalculateOperation(string input)
         {
             int separatorIndex;
